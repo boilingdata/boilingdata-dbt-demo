@@ -1,0 +1,18 @@
+config:
+  send_anonymous_usage_stats: false
+  use_colors: true
+meltano:
+  target: local
+  outputs:
+    local:
+      type: duckdb
+      path: /tmp/data.duckdb
+      extensions:
+        - httpfs
+        - parquet
+      plugins:
+        - module: boilingdata
+          config:
+            token: >-
+              eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRlbW9AYm9pbGluZ2RhdGEuY29tIiwidXNlcm5hbWUiOiIyMTM0NmJmMi02YzMxLTRjYWYtOGU3ZS05ODMyMjA1ZmZkZWUiLCJzaGFyZWQiOiIwZmNkYTRmZi0xNmJkLTQ4NjAtYWZiYi1iMGMxMzUyZjgyZjkiLCJpYXQiOjE2OTQ2OTU4MjgsImV4cCI6MTY5NDY5OTQyOCwiYXVkIjpbIjIxMzQ2YmYyLTZjMzEtNGNhZi04ZTdlLTk4MzIyMDVmZmRlZSIsImRlbW9AYm9pbGluZ2RhdGEuY29tIl0sImlzcyI6ImJvaWxpbmdkYXRhLmNvbSJ9.DBMtpF0zxMXri0nwR1NchPAViwq5cai2GxabpGo0AHgZJGumze9wBNM9AWYC6yALZzvaoGBBJJWI0p6LviB8dg
+      threads: 4
