@@ -18,8 +18,10 @@ This repository is based on [`jwills/s3-demo`](https://github.com/jwills/s3-demo
 
 3. Create bdcli config and fetch fresh token
 
-`bdcli account config`
-`bdcli account sts-token --dbtprofiles profiles.yml`
+```shell
+bdcli account config
+bdcli account sts-token --dbtprofiles profiles.yml
+```
 
 4. Run dbt
 
